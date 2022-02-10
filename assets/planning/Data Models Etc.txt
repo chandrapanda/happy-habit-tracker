@@ -1,0 +1,32 @@
+- Using built-in Kansan board from GitHub to organize tasks.
+- Sample html/css templates for inspiration.
+- See next question for data models.
+
+- Data Models:
+A USER can have many HABITS.
+HABITS can have many USERS.
+
+A CATEGORY has many HABITS.
+A HABIT belong to one CATEGORY.
+
+AN ENTRY belongs to one HABIT.
+A HABIT has many ENTRIES.
+
+e.g.
+Physical
+- Running
+- Yoga
+- Weight Lifting
+- Other
+
+Mental
+- Meditation
+- Journaling
+- Rest
+- Other
+
+Dietary
+- Water
+- Fruits & Veg
+- Protein
+- Other
