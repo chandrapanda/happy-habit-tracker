@@ -3,18 +3,19 @@
 - See next question for data models.
 
 - Data Models:
-A USER can have many HABITS.
-HABITS can have many USERS.
+A USER has many ENTRIES.
+ENTRIES belong to USERS.
 
 A CATEGORY has many HABITS.
-A HABIT belong to one CATEGORY.
+A HABIT belongs to one CATEGORY.
 
-AN ENTRY belongs to one HABIT.
 A HABIT has many ENTRIES.
+AN ENTRY belongs to one HABIT.
 
 e.g.
-Physical
-- Running
+Physical (CATEGORY)
+- Running (HABIT)
+-- ENTRY (entry.timestamp, entry.duration, entry.units)
 - Yoga
 - Weight Lifting
 - Other
@@ -30,3 +31,5 @@ Dietary
 - Fruits & Veg
 - Protein
 - Other
+
+Possible third-party: Google Analytics, Data Dog, Calendars, Charts
