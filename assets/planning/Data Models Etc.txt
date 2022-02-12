@@ -32,4 +32,10 @@ Dietary
 - Protein
 - Other
 
+User can pick a category and enter habits
+User can view habits
+BONUS: User can view habits BASED ON category / date / etc. 
+NOTE: Integrate [Google] analytics tracking as third-party technology
+OTHERS: sessions technologies, calendars, charts, etc. libraries (Ex; toast messages, notifications)
+
 Possible third-party: Google Analytics, Data Dog, Calendars, Charts
