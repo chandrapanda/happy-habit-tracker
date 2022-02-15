@@ -1,0 +1,6 @@
+-- DROP DATABASE
+DROP DATABASE IF EXISTS habitracker_db;
+
+-- CREATE DATABASE
+CREATE DATABASE habitracker_db;
+
