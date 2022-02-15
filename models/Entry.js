@@ -16,13 +16,20 @@ Entry.init(
       type: DataTypes.TIME,
       allowNull: false,
     },
-    // cat_id: {
+    // category_id: {
     //   type: DataTypes.INTEGER,
     //   references: {
     //     model: 'category',
     //     key: 'id',
     //   }
     // },
+    user_id: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'user',
+        key: 'id',
+      },
+    },
     habit_id: {
       type: DataTypes.INTEGER,
       references: {
