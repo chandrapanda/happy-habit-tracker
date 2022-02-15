@@ -16,7 +16,7 @@ Habit.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    cat_id: {
+    category_id: {
       type: DataTypes.INTEGER,
       references: {
         model: 'category',
