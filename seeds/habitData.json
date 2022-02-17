@@ -1,0 +1,62 @@
+[
+  {
+    "id": "1",
+    "habit_name": "category 1",
+    "category_id": 1
+   },
+   {
+     "id": "2",
+     "habit_name": "category 2",
+     "category_id": 2
+   },
+   {
+     "id": "3",
+     "habit_name": "category 3",
+     "category_id": 3
+   },
+   {
+     "id": "4",
+     "habit_name": "category 4",
+     "category_id": 1
+   },
+   {
+     "id": "5",
+     "habit_name": "category 5",
+     "category_id": 2
+   },
+   {
+     "id": "6",
+     "habit_name": "category 6",
+     "category_id": 3
+   },
+   {
+     "id": "7",
+     "habit_name": "category 7",
+     "category_id": 1
+   },
+   {
+     "id": "8",
+     "habit_name": "category 8",
+     "category_id": 2
+   },
+   {
+     "id": "9",
+     "habit_name": "category 9",
+     "category_id": 3
+   },
+   {
+     "id": "10",
+     "habit_name": "category 10",
+     "category_id": 1
+   },
+   {
+     "id": "11",
+     "habit_name": "category 11",
+     "category_id": 2
+   },
+   {
+     "id": "12",
+    "habit_name": "category 12",
+    "category_id": 3
+  }
+]
