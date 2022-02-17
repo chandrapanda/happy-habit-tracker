@@ -13,8 +13,9 @@ Entry.init(
       autoIncrement: true,
     },
     timestamp: {
-      type: DataTypes.TIME,
+      type: DataTypes.DATE,
       allowNull: false,
+      // defaultValue: CURRENT_TIMESTAMP,
     },
     // category_id: {
     //   type: DataTypes.INTEGER,
