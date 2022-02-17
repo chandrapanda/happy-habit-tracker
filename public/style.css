@@ -3,3 +3,9 @@ body {
     font-family: 'Titillium Web', sans-serif;
     font-family: 'Zen Kurenaido', sans-serif;
 }
+
+.mainCard {
+    margin-top:5px;
+    margin-bottom: 5px;
+}
+
