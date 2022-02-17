@@ -9,16 +9,16 @@ const userData = require('./userData.json');
 const seeds = async () => {
     await sequelize.sync ({ force:true});
 
-   const newCats = await Category.bulkCreate(categoryData, {returning:true})
-   console.log(NewCats);
+   await Category.bulkCreate(categoryData, {returning:true})
+   console.log('Categroies Seeded');
 
-   const newHabits = await Habit.bulkCreate(habitData, {returning: true})
+   await Habit.bulkCreate(habitData, {returning: true})
    console.log('Habits Seeded');
 
-   const newEntry = await Entry.bulkCreate(entryData, {returning: true});
+   await Entry.bulkCreate(entryData, {returning: true});
    console.log('Entries Seeded');
 
-   const newUserData = await Entry.bulkCreate(userData, {returning: true});
+   await Entry.bulkCreate(userData, {returning: true});
    console.log('user Seeded');
    
    process.exit();
