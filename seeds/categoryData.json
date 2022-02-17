@@ -1,0 +1,17 @@
+[ 
+    {
+        "id" : "1",
+        "category_name": "Physical"
+    },
+    {
+       "id" : "2",
+       "category_name" : "Mental"
+    },
+    {
+       "id" : "3",
+       "category_name" : "Dietary"
+   }
+
+
+]
+ 
