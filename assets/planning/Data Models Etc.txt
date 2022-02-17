@@ -13,24 +13,24 @@ A HABIT has many ENTRIES.
 AN ENTRY belongs to one HABIT.
 
 e.g.
-Physical (CATEGORY)
-- Running (HABIT)
+1 Physical (CATEGORY)
+- 1 Running (HABIT)
 -- ENTRY (entry.timestamp, entry.duration, entry.units)
-- Yoga
-- Weight Lifting
-- Other
+- 2 Yoga
+- 3 Weight Lifting
+- 4 Other - Physical
 
-Mental
-- Meditation
-- Journaling
-- Rest
-- Other
+2 Mental
+- 5 Meditation
+- 6 Journaling
+- 7 Rest
+- 8 Other - Mental
 
-Dietary
-- Water
-- Fruits & Veg
-- Protein
-- Other
+3 Dietary
+- 9 Water
+- 10 Fruits & Veg
+- 11 Protein
+- 12 Other - Dietary
 
 User can pick a category and enter habits
 User can view habits
@@ -39,3 +39,12 @@ NOTE: Integrate [Google] analytics tracking as third-party technology
 OTHERS: sessions technologies, calendars, charts, etc. libraries (Ex; toast messages, notifications)
 
 Possible third-party: Google Analytics, Data Dog, Calendars, Charts
+
+* ROUTE PLANNING *
+CATEGORY ROUTES
+- GET all
+- GET one
+HABIT ROUTES
+- GET all (filter by Category)
+
+ENRTY ROUTES
