@@ -1,7 +1,7 @@
-// TODO: CATEGORY ROUTES
+// CATEGORY ROUTES
 
 const router = require("express").Router();
-const { Category, Product } = require("../../models");
+const { Category, Habit } = require("../../models");
 
 // The `/api/categories` endpoint
 
@@ -11,7 +11,7 @@ router.get("/", async (req, res) => {
     const categoryData = await Category.findAll({
       fields: ["id"],
       // be sure to include its associated Products
-      include: [{ model: Product }],
+      include: [{ model: Habit }],
     });
     res.status(200).json(categoryData);
   } catch (err) {
@@ -25,7 +25,7 @@ router.get("/:id", async (req, res) => {
   try {
     const categoryData = await Category.findByPk(req.params.id, {
       // be sure to include its associated Products
-      include: [{ model: Product }],
+      include: [{ model: Habit }],
     });
     if (!categoryData) {
       res.status(404).json({ message: "No category with this id." });
@@ -33,17 +33,6 @@ router.get("/:id", async (req, res) => {
     }
     res.status(200).json(categoryData);
   } catch (err) {
-    res.status(500).json(err);
-  }
-});
-
-//Create a new category
-router.post("/", async (req, res) => {
-  try {
-    const newCategory = await Category.create(req.body);
-    res.status(200).json(newCategory);
-  } catch (err) {
-    console.log(err);
     res.status(500).json(err);
   }
 });
