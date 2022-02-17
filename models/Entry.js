@@ -15,7 +15,7 @@ Entry.init(
     timestamp: {
       type: DataTypes.DATE,
       allowNull: false,
-      // defaultValue: CURRENT_TIMESTAMP(),
+      // defaultValue: CURRENT_TIMESTAMP,
     },
     // category_id: {
     //   type: DataTypes.INTEGER,
