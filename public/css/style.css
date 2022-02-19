@@ -9,3 +9,13 @@ body {
     margin-bottom: 5px;
 }
 
+.logo {
+    display: flex;
+    margin: 2rem;
+    
+}
+
+.logoImg {
+    justify-content: center;
+}
+
