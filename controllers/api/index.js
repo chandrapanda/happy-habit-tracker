@@ -4,9 +4,9 @@ const entryRoutes = require("./entryRoutes");
 const categoryRoutes = require("./categoryRoutes");
 const habitRoutes = require("./habitRoutes");
 
-router.use("/User", userRoutes);
-router.use("/Entry", entryRoutes);
-router.use("/Category", categoryRoutes);
-router.use("/Habit", habitRoutes);
+router.use("/user", userRoutes);
+router.use("/entry", entryRoutes);
+router.use("/category", categoryRoutes);
+router.use("/habit", habitRoutes);
 
 module.exports = router;

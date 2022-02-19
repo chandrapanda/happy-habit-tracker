@@ -24,13 +24,13 @@ Entry.belongsTo(Habit, {
 
 // A User has many Entries
 User.hasMany(Entry, {
-  foreignKey: 'user_id',
-  onDelete: 'CASCADE'
+  foreignKey: "user_id",
+  onDelete: "CASCADE",
 });
 
 // An Entry belongs to a User
 Entry.belongsTo(User, {
-  foreignKey: 'user_id'
+  foreignKey: "user_id",
 });
 
 module.exports = {

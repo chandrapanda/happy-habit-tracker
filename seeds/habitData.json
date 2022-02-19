@@ -1,61 +1,61 @@
 [
   {
-    "id": "1",
+    "id": 1,
     "habit_name": "Running",
     "category_id": 1
-   },
-   {
-     "id": "2",
-     "habit_name": "Yoga",
-     "category_id": 1
-   },
-   {
-     "id": "3",
-     "habit_name": "Weight Lifting",
-     "category_id": 1
-   },
-   {
-     "id": "4",
-     "habit_name": "Other - Physical",
-     "category_id": 1
-   },
-   {
-     "id": "5",
-     "habit_name": "Meditation",
-     "category_id": 2
-   },
-   {
-     "id": "6",
-     "habit_name": "Journaling",
-     "category_id": 2
-   },
-   {
-     "id": "7",
-     "habit_name": "Rest",
-     "category_id": 2
-   },
-   {
-     "id": "8",
-     "habit_name": "Other - Mental",
-     "category_id": 2
-   },
-   {
-     "id": "9",
-     "habit_name": "Water",
-     "category_id": 3
-   },
-   {
-     "id": "10",
-     "habit_name": "Fruit & Veg",
-     "category_id": 3
-   },
-   {
-     "id": "11",
-     "habit_name": "Protein",
-     "category_id": 3
-   },
-   {
-     "id": "12",
+  },
+  {
+    "id": 2,
+    "habit_name": "Yoga",
+    "category_id": 1
+  },
+  {
+    "id": 3,
+    "habit_name": "Weight Lifting",
+    "category_id": 1
+  },
+  {
+    "id": 4,
+    "habit_name": "Other - Physical",
+    "category_id": 1
+  },
+  {
+    "id": 5,
+    "habit_name": "Meditation",
+    "category_id": 2
+  },
+  {
+    "id": 6,
+    "habit_name": "Journaling",
+    "category_id": 2
+  },
+  {
+    "id": 7,
+    "habit_name": "Rest",
+    "category_id": 2
+  },
+  {
+    "id": 8,
+    "habit_name": "Other - Mental",
+    "category_id": 2
+  },
+  {
+    "id": 9,
+    "habit_name": "Water",
+    "category_id": 3
+  },
+  {
+    "id": 10,
+    "habit_name": "Fruit & Veg",
+    "category_id": 3
+  },
+  {
+    "id": 11,
+    "habit_name": "Protein",
+    "category_id": 3
+  },
+  {
+    "id": 12,
     "habit_name": "Other - Dietary",
     "category_id": 3
   }
