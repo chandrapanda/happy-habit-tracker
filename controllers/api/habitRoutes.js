@@ -3,7 +3,7 @@
 const router = require("express").Router();
 const { Habit, Category } = require("../../models");
 
-// The `/api/habits` endpoint
+// The `/api/habit` endpoint
 
 router.get("/", async (req, res) => {
   //Find all habits
@@ -19,13 +19,13 @@ router.get("/", async (req, res) => {
   }
 });
 
-//Get one category
+//Get one habit
 router.get("/:id", async (req, res) => {
-  // Find one category by its `id` value
+  // Find one habit by its `id` value
   try {
     const habitData = await Habit.findByPk(req.params.id, {
-      // be sure to include its associated Products
-      include: [{ model: Product }],
+      // be sure to include its associated Category
+      include: [{ model: Category }],
     });
     if (!habitData) {
       res.status(404).json({ message: "No habit with this id." });
@@ -33,6 +33,7 @@ router.get("/:id", async (req, res) => {
     }
     res.status(200).json(habitData);
   } catch (err) {
+    console.error(err);
     res.status(500).json(err);
   }
 });

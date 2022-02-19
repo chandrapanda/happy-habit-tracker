@@ -14,7 +14,6 @@ router.get("/", async (req, res) => {
     console.error(err);
     res.status(500).json(err);
   }
-  // console.log(categoryData);
 });
 
 //Get one category
@@ -28,6 +27,7 @@ router.get("/:id", async (req, res) => {
     }
     res.status(200).json(categoryData);
   } catch (err) {
+    console.error(err);
     res.status(500).json(err);
   }
 });
