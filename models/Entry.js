@@ -1,6 +1,6 @@
-const { Model, DataTypes } = require('sequelize');
+const { Model, DataTypes } = require("sequelize");
 
-const sequelize = require('../config/connection');
+const sequelize = require("../config/connection");
 
 class Entry extends Model {}
 
@@ -17,34 +17,27 @@ Entry.init(
       allowNull: false,
       // defaultValue: CURRENT_TIMESTAMP,
     },
-    // category_id: {
-    //   type: DataTypes.INTEGER,
-    //   references: {
-    //     model: 'category',
-    //     key: 'id',
-    //   }
-    // },
     user_id: {
       type: DataTypes.INTEGER,
       references: {
-        model: 'user',
-        key: 'id',
+        model: "user",
+        key: "id",
       },
     },
     habit_id: {
       type: DataTypes.INTEGER,
       references: {
-        model: 'habit',
-        key: 'id',
-      }
-    }
+        model: "habit",
+        key: "id",
+      },
+    },
   },
   {
     sequelize,
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'entry',
+    modelName: "entry",
   }
 );
 

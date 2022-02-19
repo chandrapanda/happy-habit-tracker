@@ -3,7 +3,7 @@
 const router = require("express").Router();
 const { Entry, Habit, User } = require("../../models");
 
-// The `/api/entries` endpoint
+// The `/api/entry` endpoint
 
 router.get("/", async (req, res) => {
   //Find all entries
@@ -19,6 +19,24 @@ router.get("/", async (req, res) => {
   }
 });
 
+// TODO: View all entries by one user
+// // View all entries by ONE user
+// router.get("/", async (req, res) => {
+//   //Find all entries by ONE user
+//   try {
+//     const userID = req.params.User;
+//     const entryData = await Entry.findAll({
+//       where: {
+//         req.params.id =
+//       // be sure to include its associated Habit
+//       include: [{ model: Habit, User }],
+//     });
+//     res.status(200).json(entryData);
+//   } catch (err) {
+//     res.status(500).json(err);
+//   }
+// });
+
 //Get one entry
 router.get("/:id", async (req, res) => {
   // Find one entries by its `id` value
@@ -28,7 +46,7 @@ router.get("/:id", async (req, res) => {
       include: [{ model: Habit, User }],
     });
     if (!entryData) {
-      res.status(404).json({ message: "No category with this id." });
+      res.status(404).json({ message: "No entry with this id." });
       return;
     }
     res.status(200).json(entryData);
@@ -51,11 +69,16 @@ router.post("/", async (req, res) => {
 //Update entry by its `id` value
 router.put("/:id", async (req, res) => {
   try {
-    const updatedCategory = await Category.update(req.body, {
+    const updatedEntry = await Entry.update(req.body, {
       where: { id: req.params.id },
     });
-    res.status(200).json(updatedCategory);
+    if (!updatedEntry) {
+      res.status(404).json({ message: "No entry with this id." });
+      return;
+    }
+    res.status(200).json(updatedEntry);
   } catch (err) {
+    console.error(err);
     res.status(500).json(err);
   }
 });
@@ -72,6 +95,7 @@ router.delete("/:id", async (req, res) => {
     }
     res.status(200).json(entryData);
   } catch (err) {
+    console.error(err);
     res.status(500).json(err);
   }
 });
