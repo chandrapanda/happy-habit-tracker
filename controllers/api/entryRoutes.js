@@ -5,7 +5,7 @@ const { Entry, Habit, User } = require("../../models");
 
 // The `/api/entry` endpoint
 
-router.get("/", async (req, res) => {
+router.get("/admin-get-all", async (req, res) => {
   //Find all entries
   try {
     const entryData = await Entry.findAll({
@@ -19,23 +19,54 @@ router.get("/", async (req, res) => {
   }
 });
 
-// TODO: View all entries by one user
-// // View all entries by ONE user
-// router.get("/", async (req, res) => {
-//   //Find all entries by ONE user
-//   try {
-//     const userID = req.params.User;
-//     const entryData = await Entry.findAll({
-//       where: {
-//         req.params.id =
-//       // be sure to include its associated Habit
-//       include: [{ model: Habit, User }],
-//     });
-//     res.status(200).json(entryData);
-//   } catch (err) {
-//     res.status(500).json(err);
-//   }
-// });
+// View all entries by one user
+router.get("/", async (req, res) => {
+  try {
+    const entryDataByUser = await Entry.findAll({
+      where: {
+        user_id: 1,
+        // req.session.userId,
+      },
+    });
+
+    const entries = entryDataByUser.map((entry) => entry.get({ plain: true }));
+    // res.render('all-posts-admin', {
+      //   // TODO: Which layout in handlebars is used to show the user all their entries???
+      //   layout: 'dashboard', 
+      //   posts,
+      // });
+      
+    res.status(200).json(entryDataByUser);
+  } catch (err) {
+    res.redirect('login');
+  }
+});
+
+// View all entries by one user for one habit
+router.get("/myhabit", async (req, res) => {
+  try {
+    const entryDataByUser = await Entry.findAll({
+      where: {
+        user_id: 1,
+        // req.session.userId,
+        habit_id: 1,
+        // req.body.habit_id
+      },
+    });
+
+    const entries = entryDataByUser.map((entry) => entry.get({ plain: true }));
+    // res.render('all-posts-admin', {
+      //   // TODO: Which layout in handlebars is used to show the user all their entries for a particlar habit???
+      //   layout: 'dashboard', 
+      //   posts,
+      // });
+      
+    res.status(200).json(entryDataByUser);
+  } catch (err) {
+    res.redirect('login');
+  }
+});
+
 
 //Get one entry
 router.get("/:id", async (req, res) => {
