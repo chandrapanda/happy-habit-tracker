@@ -15,16 +15,21 @@
       integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="..public/style.css" />
+    <link rel="stylesheet" href="/css/style.css" />
     <title>Happy Habit Tracker</title>
+    <link rel="stylesheet" href="/css/login-style.css" />
+
   </head>
   <body>
-    <div class="jumbotron jumbotron-fluid">
-      <div class="container">
-        <h1 class="display-4">Happy HabiTracker</h1>
-        <p class="lead">Track your habits with this happy, handy application.</p>
-      </div>
+<nav class="navbar navbar-light bg-light">
+  <a class="navbar-brand" href="#">
+    <img src="/assets/images/logo.png" width="30" height="30" class="d-inline-block align-top" alt="">
+    Bootstrap
+  </a>
+</nav>
     </div>
+    {{! Views show here }}
+    {{{body}}}
   </body>
   <script src="../assets/script.js"></script>
 </html>
