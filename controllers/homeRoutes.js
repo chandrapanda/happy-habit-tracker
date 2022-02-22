@@ -2,6 +2,7 @@ const router = require("express").Router();
 const { User } = require("../models");
 const withAuth = require("../utils/auth");
 
+/*
 router.get("/", withAuth, async (req, res) => {
   try {
     const userData = await User.findAll({
@@ -18,6 +19,10 @@ router.get("/", withAuth, async (req, res) => {
     res.status(500).json(err);
   }
 });
+*/
+router.get("/", (req, res) => {
+  res.render("homepage");
+});
 
 router.get("/login", (req, res) => {
   if (req.session.logged_in) {
@@ -25,15 +30,19 @@ router.get("/login", (req, res) => {
     return;
   }
 
-  res.render("login");
+  res.render("login", {
+    title: "login",
+  });
 });
 
 router.get("/signup", (req, res) => {
-  if (req.session.logged_in) {
-    res.redirect("/");
-    return;
-  }
+  // if (req.session.logged_in) {
+  //   res.redirect("/");
+  //   return;
+  // }
 
-  res.render("signup");
+  res.render("signup", {
+    title: "signup",
+  });
 });
 module.exports = router;
