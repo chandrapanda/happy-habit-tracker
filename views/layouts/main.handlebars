@@ -26,6 +26,11 @@
     <img src="/assets/images/logo.png" width="30" height="30" class="d-inline-block align-top" alt="">
     Happy Habit Tracker
   </a>
+      {{#if loggedIn}}
+        <button id="logout" class="btn btn-primary">Logout</button>
+      {{else}}
+        <a href="/login">Login</a>
+      {{/if}}
 </nav>
     </div>
     {{! Views show here }}

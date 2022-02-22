@@ -45,4 +45,22 @@ router.get("/signup", (req, res) => {
     title: "signup",
   });
 });
+
+router.get("/physical", (req, res) => {
+  res.render("physical", {
+    title: "Physical",
+  });
+});
+
+router.get("/mental", (req, res) => {
+  res.render("mental", {
+    title: "Mental",
+  });
+});
+
+router.get("/dietary", (req, res) => {
+  res.render("dietary", {
+    title: "Dietary",
+  });
+});
 module.exports = router;
