@@ -44,10 +44,12 @@ router.post("/login", async (req, res) => {
   } catch (err) {
     res.status(400).json(err);
   }
+  console.log(req.session);
 });
 
 //Logout
 router.post("/logout", (req, res) => {
+  console.log("logged out!");
   if (req.session.logged_in) {
     req.session.destroy(() => {
       res.status(204).end();
