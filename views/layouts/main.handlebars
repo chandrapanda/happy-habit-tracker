@@ -18,7 +18,6 @@
     <link rel="stylesheet" href="/css/style.css" />
     <title>{{title}}</title>
     <link rel="stylesheet" href="/css/login-style.css" />
-
   </head>
   <body>
 <nav class="navbar navbar-light bg-light">
@@ -26,8 +25,8 @@
       <img class="d-inline-block align-top" alt="logo" height="30" width="30" src="/images/logo.jpg">
     Happy Habit Tracker
   </span>
-      {{#if loggedIn}}
-        <button id="logout" class="btn btn-primary">Logout</button>
+      {{#if logged_in}}
+        <a href="/logout">Logout</a>
       {{else}}
         <a href="/login">Login</a>
       {{/if}}
@@ -36,5 +35,9 @@
     {{! Views show here }}
     {{{body}}}
   </body>
+
+  {{#if logged_in}}
+  <script src="/js/logout.js"></script>
+  {{/if}}
   <script src="/js/script.js"></script>
 </html>
