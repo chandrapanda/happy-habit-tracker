@@ -22,10 +22,10 @@
   </head>
   <body>
 <nav class="navbar navbar-light bg-light">
-  <a class="navbar-brand" href="/">
-    <img src="/assets/images/logo.png" width="30" height="30" class="d-inline-block align-top" alt="">
+  <span class="navbar-brand" href="/">
+      <img class="d-inline-block align-top" alt="logo" height="30" width="30" src="/images/logo.jpg">
     Happy Habit Tracker
-  </a>
+  </span>
       {{#if loggedIn}}
         <button id="logout" class="btn btn-primary">Logout</button>
       {{else}}
@@ -36,5 +36,5 @@
     {{! Views show here }}
     {{{body}}}
   </body>
-  <script src="../assets/script.js"></script>
+  <script src="/js/script.js"></script>
 </html>

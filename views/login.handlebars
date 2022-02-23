@@ -2,20 +2,26 @@
 <div class="wrapper">
   <div class="text-center mt-4 name">Happy Habit Tracker</div>
   <br />
-  <form class="p-3 mt-3">
+  <form class="login-form p-3 mt-3">
     <div class="form-field d-flex align-items-center">
       <span class="far fa-user"></span>
-      <input type="text" name="userName" id="userName" placeholder="Username" />
-    </div>
-    <div class="form-field d-flex align-items-center">
-      <span class="far fa-user"></span>
-      <input type="text" name="email" id="email" placeholder="Email" />
+      <input
+        class="form-input"
+        type="text"
+        id="username-login"
+        placeholder="Username"
+      />
     </div>
     <div class="form-field d-flex align-items-center">
       <span class="fas fa-key"></span>
-      <input type="password" name="password" id="pwd" placeholder="Password" />
+      <input
+        class="form-input"
+        type="password"
+        id="password-login"
+        placeholder="Password"
+      />
     </div>
-    <button id="login" class="btn mt-3">Login</button>
+    <button type="submit" class="btn mt-3">Login</button>
   </form>
   <br />
   <div class="text-center fs-6">
@@ -23,3 +29,5 @@
     <a href="/signup">Sign up</a>
   </div>
 </div>
+
+<script src="/js/login.js"></script>
