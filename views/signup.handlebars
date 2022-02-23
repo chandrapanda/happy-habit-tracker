@@ -1,29 +1,40 @@
+<link rel="stylesheet" href="/css/login-style.css" />
 <div class="wrapper">
   <div class="text-center mt-4 name">Register</div>
   <br />
-  <form class="p-3 mt-3">
+  <form class="signup-form p-3 mt-3">
     <div class="form-field d-flex align-items-center">
       <span class="far fa-user"></span>
-      <input type="text" name="userName" id="userName" placeholder="Username" />
+      <input
+        class="form-input"
+        type="text"
+        id="username-signup"
+        placeholder="Username"
+      />
     </div>
     <div class="form-field d-flex align-items-center">
       <span class="far fa-user"></span>
-      <input type="text" name="email" id="email" placeholder="Email" />
-    </div>
-    <div class="form-field d-flex align-items-center">
-      <span class="fas fa-key"></span>
-      <input type="password" name="password" id="pwd" placeholder="Password" />
+      <input type="text" name="email" id="email-signup" placeholder="Email" />
     </div>
     <div class="form-field d-flex align-items-center">
       <span class="fas fa-key"></span>
       <input
+        class="form-input"
         type="password"
-        name="password"
-        id="confirm-pwd"
-        placeholder="Confrim Password"
+        id="password-signup"
+        placeholder="Password"
       />
     </div>
-    <button id="login" class="btn mt-3">Signup</button>
+    {{! <div class="form-field d-flex align-items-center">
+      <span class="fas fa-key"></span>
+      <input
+        class="form-input"
+        type="password"
+        id="password-signup"
+        placeholder="Confirm Password"
+      />
+    </div> }}
+    <button type="submit" class="btn mt-3">Signup</button>
   </form>
   <div class="text-center fs-6">
     <p>Already have an account?</p>
@@ -31,3 +42,5 @@
   </div>
   <br />
 </div>
+
+<script src="/js/login.js"></script>
