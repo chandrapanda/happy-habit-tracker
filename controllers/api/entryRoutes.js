@@ -55,7 +55,7 @@ router.get("/myhabit", async (req, res) => {
     });
 
     const entries = entryDataByUser.map((entry) => entry.get({ plain: true }));
-    // res.render('all-posts-admin', {
+    // res.render('myhabit', {
       //   // TODO: Which layout in handlebars is used to show the user all their entries for a particlar habit???
       //   layout: 'dashboard', 
       //   posts,
@@ -89,7 +89,7 @@ router.get("/:id", async (req, res) => {
 //Create a new entry
 router.post("/", async (req, res) => {
   try {
-    const newEntry = await Entry.create(req.body);
+    const newEntry = await Entry.create(req.body, {returning: true});
     res.status(200).json(newEntry);
   } catch (err) {
     console.log(err);

@@ -1,4 +1,4 @@
-'use strict'
+// 'use strict'
 // Global variables
 const today = new Date();
 const day = `${today.getDate()}`.padStart(2,0)
