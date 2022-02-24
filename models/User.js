@@ -39,7 +39,16 @@ User.init(
   },
   {
     hooks: {
+      beforeBulkCreate: async (userData) => {
+        // console.log('Bulk create working')
+        // console.log(userData);
+        for (const user of userData) {
+          user.password = await bcrypt.hash(user.password, 10);
+        }
+        return userData;
+      },
       beforeCreate: async (newUserData) => {
+        // console.log('Before create working')
         newUserData.password = await bcrypt.hash(newUserData.password, 10);
         return newUserData;
       },
