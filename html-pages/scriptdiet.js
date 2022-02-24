@@ -41,23 +41,23 @@ $('.saveBtn').on('click', function() {
     localStorage.setItem(time, value);
     console.log(time, value)
 })
-//  
+ 
 //  assigns the correct color code for past, present, future time blocks
-// function checkHour() {
-//     var currentHour = moment().hours();
+function checkHour() {
+    var currentHour = moment().hours();
 
-//     $('.time-block').each(function() {
-//         var hourBlock = parseInt($(this).attr('id').split('-')[1]);
-//         if(hourBlock < currentHour) {
-//             $(this).addClass('past')
-//             console.log('hello')
-//         } else if(hourBlock === currentHour) {
-//             $(this).removeClass('past');
-//             $(this).addClass('present');
-//         } else {
-//             $(this).removeClass('past');
-//             $(this).removeClass('present');
-//             $(this).addClass('future');
-//         }
-//     })
-// }
+    $('.time-block').each(function() {
+        var hourBlock = parseInt($(this).attr('id').split('-')[1]);
+        if(hourBlock < currentHour) {
+            $(this).addClass('past')
+            console.log('hello')
+        } else if(hourBlock === currentHour) {
+            $(this).removeClass('past');
+            $(this).addClass('present');
+        } else {
+            $(this).removeClass('past');
+            $(this).removeClass('present');
+            $(this).addClass('future');
+        }
+    })
+}
