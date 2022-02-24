@@ -15,7 +15,7 @@ Entry.init(
     timestamp: {
       type: DataTypes.DATE,
       allowNull: false,
-      // defaultValue: CURRENT_TIMESTAMP,
+      defaultValue: sequelize.literal('CURRENT_TIMESTAMP'),
     },
     user_id: {
       type: DataTypes.INTEGER,
