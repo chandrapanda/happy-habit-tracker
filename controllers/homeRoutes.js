@@ -68,67 +68,67 @@ router.get("/dietary", (req, res) => {
 
 // PHYSICAL ROTUES START HERE
 router.get("/physical/running", (req, res) => {
-  res.render("running", {
-    title: "Running Tracker",
+  res.render("habitPage", {
+    title: "Running ",
   });
 });
 router.get("/physical/weightLifting", (req, res) => {
-  res.render("weightLifting", {
-    title: "Running Tracker",
+  res.render("habitPage", {
+    title: "Weight Lifting",
   });
 });
 router.get("/physical/yoga", (req, res) => {
-  res.render("yoga", {
-    title: "Running Tracker",
+  res.render("habitPage", {
+    title: "Yoga",
   });
 });
 router.get("/physical/other", (req, res) => {
-  res.render("other", {
-    title: "Running Tracker",
+  res.render("habitPage", {
+    title: "Other",
   });
 });
 
 // MENTAL ROUTES START HERE
 router.get("/mental/meditation", (req, res) => {
-  res.render("meditation", {
-    title: "Running Tracker",
+  res.render("habitPage", {
+    title: "Meditation",
   });
 });
 router.get("/mental/journaling", (req, res) => {
-  res.render("journaling", {
-    title: "Journaling Tracker",
+  res.render("habitPage", {
+    title: "Journaling ",
   });
 });
 router.get("/mental/rest", (req, res) => {
-  res.render("rest", {
-    title: "Rest Tracker",
+  res.render("habitPage", {
+    title: "Rest ",
   });
 });
 router.get("/mental/other", (req, res) => {
-  res.render("other", {
-    title: "Running Tracker",
+  res.render("habitPage", {
+    title: "Other ",
   });
 });
 
 // DIETARY ROUTES START HERE
 router.get("/dietary/water", (req, res) => {
-  res.render("water", {
-    title: "Water Tracker",
+  res.render("habitPage", {
+    title: "Water ",
   });
 });
 router.get("/dietary/fruit&veggie", (req, res) => {
-  res.render("fruit&veggie", {
-    title: "Fruit & Veggie Tracker",
+  res.render("habitPage", {
+    title: "Fruit & Veggie ",
   });
 });
 router.get("/dietary/protiein", (req, res) => {
-  res.render("protein", {
-    title: "Protein Tracker",
+  res.render("habitPage", {
+    title: "Protein ",
   });
 });
 router.get("/dietary/other", (req, res) => {
-  res.render("other", {
-    title: "Other Tracker",
+  res.render("habitPage", {
+    title: "Other ",
   });
 });
 module.exports = router;
