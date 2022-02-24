@@ -37,3 +37,8 @@ body {
 }
 
 
+.entryContainer {
+   display: flex ;
+   justify-content: center;
+}
+
