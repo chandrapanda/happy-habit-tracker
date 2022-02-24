@@ -19,16 +19,21 @@ router.get("/admin-get-all", async (req, res) => {
   }
 });
 
-// View all entries by one user
-router.get("/", async (req, res) => {
+// TODO: View all entries by one user
+router.get("/habits/", async (req, res) => {
   try {
     const entryDataByUser = await Entry.findAll({
+      include: [
+        {
+          model: User,
+          attributes: ['id']
+        },
+      ],
       where: {
-        user_id: 1,
-        // req.session.userId,
+        user_id: req.session.user_id,
       },
     });
-
+  
     const entries = entryDataByUser.map((entry) => entry.get({ plain: true }));
     // res.render('all-posts-admin', {
       //   // TODO: Which layout in handlebars is used to show the user all their entries???
@@ -38,7 +43,8 @@ router.get("/", async (req, res) => {
       
     res.status(200).json(entryDataByUser);
   } catch (err) {
-    res.redirect('login');
+    res.status(500).json(err);
+    // res.redirect('login');
   }
 });
 
@@ -63,7 +69,8 @@ router.get("/myhabit", async (req, res) => {
       
     res.status(200).json(entryDataByUser);
   } catch (err) {
-    res.redirect('login');
+    res.status(500).json(err);
+    // res.redirect('login');
   }
 });
 
