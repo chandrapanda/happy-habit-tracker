@@ -39,7 +39,7 @@ router.get("/dashboard/", async (req, res) => {
     // res.render('dashboard', {
       //   // TODO: Which layout in handlebars is used to show the user all their entries???
       //   layout: 'main', 
-      //   posts,
+      //   entries,
       // });
       
     res.status(200).json(entryDataByUser);
@@ -49,7 +49,7 @@ router.get("/dashboard/", async (req, res) => {
   }
 });
 
-// View all entries by one user for one habit
+// TODO: View all entries by one user for one habit
 router.get("/tracking/:id", async (req, res) => {
   try {
     const entryDataByUser = await Entry.findAll({
@@ -69,7 +69,7 @@ router.get("/tracking/:id", async (req, res) => {
     // res.render('habitPage', {
       //   // TODO: Which layout in handlebars is used to show the user all their entries???
       //   layout: 'main', 
-      //   posts,
+      //   entries,
       // });
       
     res.status(200).json(entryDataByUser);
