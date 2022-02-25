@@ -1,6 +1,7 @@
 // ENTRY ROUTES
 
 const router = require("express").Router();
+const { redirect } = require("express/lib/response");
 const { Entry, Habit, User } = require("../../models");
 
 // The `/api/entry` endpoint
@@ -19,8 +20,8 @@ router.get("/admin-get-all", async (req, res) => {
   }
 });
 
-// TODO: View all entries by one user
-router.get("/habits/", async (req, res) => {
+// View all entries by one user
+router.get("/dashboard/", async (req, res) => {
   try {
     const entryDataByUser = await Entry.findAll({
       include: [
@@ -35,10 +36,10 @@ router.get("/habits/", async (req, res) => {
     });
   
     const entries = entryDataByUser.map((entry) => entry.get({ plain: true }));
-    // res.render('all-posts-admin', {
+    // res.render('dashboard', {
       //   // TODO: Which layout in handlebars is used to show the user all their entries???
-      //   layout: 'dashboard', 
-      //   posts,
+      //   layout: 'main', 
+      //   entries,
       // });
       
     res.status(200).json(entryDataByUser);
@@ -48,23 +49,27 @@ router.get("/habits/", async (req, res) => {
   }
 });
 
-// View all entries by one user for one habit
-router.get("/myhabit", async (req, res) => {
+// TODO: View all entries by one user for one habit
+router.get("/tracking/:id", async (req, res) => {
   try {
     const entryDataByUser = await Entry.findAll({
+      include: [
+        {
+          model: User,
+          attributes: ['id']
+        },
+      ],
       where: {
-        user_id: 1,
-        // req.session.userId,
-        habit_id: 1,
-        // req.body.habit_id
+        user_id: req.session.user_id,
+        habit_id: req.params.id
       },
     });
-
+  
     const entries = entryDataByUser.map((entry) => entry.get({ plain: true }));
-    // res.render('myhabit', {
-      //   // TODO: Which layout in handlebars is used to show the user all their entries for a particlar habit???
-      //   layout: 'dashboard', 
-      //   posts,
+    // res.render('habitPage', {
+      //   // TODO: Which layout in handlebars is used to show the user all their entries???
+      //   layout: 'main', 
+      //   entries,
       // });
       
     res.status(200).json(entryDataByUser);
