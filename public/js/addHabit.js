@@ -1,5 +1,5 @@
-const user_id = document.getElementById("user_id").value;
-const habit_id =document.getElementById("habit_id").value;
+// const user_id = document.getElementById("user_id").value;
+// const habit_id = document.getElementById("habit_id").value;
 
 
 // document.getElementById("myBtn").addEventListener("click", displayDate);
@@ -13,10 +13,20 @@ const habit_id =document.getElementById("habit_id").value;
 //   console.log(Date);
 // }
 
-const response = await fetch(`/api/entry`, {
-    method: 'POST',
-    body: JSON.stringify({ user_id, habit_id }),
-    headers: {
-      'Content-Type': 'application/json',
-    },
-  });
+const addEntry = async function(event) {
+  const habit_id = event.currentTarget.dataset.id
+  console.log(habit_id);
+
+  await fetch(`/api/entry`, {
+      method: 'POST',
+      body: JSON.stringify({habit_id}),
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
+}
+
+  document
+  .querySelector('#myBtn')
+  .addEventListener('click', addEntry
+  );

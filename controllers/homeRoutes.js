@@ -51,18 +51,21 @@ router.get("/signup", (req, res) => {
 router.get("/physical", (req, res) => {
   res.render("physical", {
     title: "Physical",
+    categoryID: 1
   });
 });
 
 router.get("/mental", (req, res) => {
   res.render("mental", {
     title: "Mental",
+    categoryID: 2
   });
 });
 
 router.get("/dietary", (req, res) => {
   res.render("dietary", {
     title: "Dietary",
+    categoryID: 3
   });
 });
 
@@ -70,21 +73,29 @@ router.get("/dietary", (req, res) => {
 router.get("/physical/running", (req, res) => {
   res.render("habitPage", {
     title: "Running ",
-  });
-});
-router.get("/physical/weightLifting", (req, res) => {
-  res.render("habitPage", {
-    title: "Weight Lifting",
+    categoryID: 1,
+    habitID: 1,
   });
 });
 router.get("/physical/yoga", (req, res) => {
   res.render("habitPage", {
     title: "Yoga",
+    categoryID: 1,
+    habitID: 2,
+  });
+});
+router.get("/physical/weightLifting", (req, res) => {
+  res.render("habitPage", {
+    title: "Weight Lifting",
+    categoryID: 1,
+    habitID: 3,
   });
 });
 router.get("/physical/other", (req, res) => {
   res.render("habitPage", {
     title: "Other",
+    categoryID: 1,
+    habitID: 4,
   });
 });
 
@@ -92,21 +103,29 @@ router.get("/physical/other", (req, res) => {
 router.get("/mental/meditation", (req, res) => {
   res.render("habitPage", {
     title: "Meditation",
+    categoryID: 2,
+    habitID: 5,
   });
 });
 router.get("/mental/journaling", (req, res) => {
   res.render("habitPage", {
     title: "Journaling ",
+    categoryID: 2,
+    habitID: 6,
   });
 });
 router.get("/mental/rest", (req, res) => {
   res.render("habitPage", {
     title: "Rest ",
+    categoryID: 2,
+    habitID: 7,
   });
 });
 router.get("/mental/other", (req, res) => {
   res.render("habitPage", {
     title: "Other ",
+    categoryID: 2,
+    habitID: 8,
   });
 });
 
@@ -114,21 +133,29 @@ router.get("/mental/other", (req, res) => {
 router.get("/dietary/water", (req, res) => {
   res.render("habitPage", {
     title: "Water ",
+    categoryID: 3,
+    habitID: 9,
   });
 });
 router.get("/dietary/fruit&veggie", (req, res) => {
   res.render("habitPage", {
     title: "Fruit & Veggie ",
+    categoryID: 3,
+    habitID: 10,
   });
 });
 router.get("/dietary/protiein", (req, res) => {
   res.render("habitPage", {
     title: "Protein ",
+    categoryID: 3,
+    habitID: 11,
   });
 });
 router.get("/dietary/other", (req, res) => {
   res.render("habitPage", {
     title: "Other ",
+    categoryID: 3,
+    habitID: 12
   });
 });
 module.exports = router;
