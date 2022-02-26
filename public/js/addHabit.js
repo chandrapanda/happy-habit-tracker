@@ -13,7 +13,7 @@ const habit_id =document.getElementById("habit_id").value;
 //   console.log(Date);
 // }
 
-const response = await fetch(`/api/entry/admin-get-all`, {
+const response = await fetch(`/api/entry`, {
     method: 'POST',
     body: JSON.stringify({ user_id, habit_id }),
     headers: {
