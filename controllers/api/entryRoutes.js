@@ -100,8 +100,12 @@ router.get("/:id", async (req, res) => {
 
 //Create a new entry
 router.post("/", async (req, res) => {
+  console.log('POST route to add entry running!')
   try {
-    const newEntry = await Entry.create(req.body, {returning: true});
+    const newEntry = await Entry.create({
+      ...req.body, 
+      user_id: req.session.user_id}, 
+      {returning: true});
     res.status(200).json(newEntry);
   } catch (err) {
     console.log(err);
