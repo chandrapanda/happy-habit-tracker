@@ -16,7 +16,7 @@
 }
 .center {
   display: flex;
-  /* flex-direction: column; */
+  flex-direction: column;
   text-align: center;
   justify-content: center;
   align-items: center;
@@ -46,3 +46,11 @@
   );
   border-radius: 25px;
 } 
+
+.edit-Btn {
+  color: white;
+}
+
+.delete-Btn {
+  color: white;
+}
