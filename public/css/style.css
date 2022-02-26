@@ -1,7 +1,6 @@
-/* *{
-    border: 1px solid red;
-} */
-
+.card {
+  margin: 3rem;
+}
 .card-container {
   display: flex;
   flex-direction: column;
@@ -9,6 +8,7 @@
 }
 .title-container {
   display: flex;
+  
 }
 
 .card-margin {
@@ -22,7 +22,7 @@
   align-items: center;
 }
 .back-button {
-  margin: 5rem;
+  display: flex;
 }
 
 .header-container {
