@@ -1,5 +1,6 @@
 const router = require("express").Router();
-const { User } = require("../models");
+const { Category, Entry, Habit, User } = require("../models");
+// const { User } = require("../models");
 const withAuth = require("../utils/auth");
 
 /*
@@ -70,12 +71,38 @@ router.get("/dietary", (req, res) => {
 });
 
 // PHYSICAL ROTUES START HERE
-router.get("/physical/running", (req, res) => {
-  res.render("habitPage", {
-    title: "Running ",
-    categoryID: 1,
-    habitID: 1,
-  });
+router.get("/physical/running", async (req, res) => {
+  try {
+    const entryDataByUser = await Entry.findAll({
+      include: [
+        {
+          model: User,
+          attributes: ['id']
+        },
+      ],
+      where: {
+        user_id: 1,
+        // req.session.user_id,
+        habit_id: 3
+      },
+    });
+  
+    const entries = entryDataByUser.map((entry) => entry.get({ plain: true }));
+
+    res.render("habitPage", {
+      entries,
+      title: "Running",
+      categoryID: 1,
+      habitID: 1,
+    }
+    );
+      
+    // res.status(200).json(entries);
+  } catch (err) {
+    console.log(err)
+    // res.status(500).json(err);
+    // res.redirect('login');
+  }
 });
 router.get("/physical/yoga", (req, res) => {
   res.render("habitPage", {

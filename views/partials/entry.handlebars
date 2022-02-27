@@ -1,11 +1,12 @@
-<div class="entryContainer" style="display: flex; flex-direction: column; align-items: center; text-align: center;">
-      <div class="card" style="width: 40rem; margin: 3rem; border: 1px solid">
-        <div class="card-body" >
-          <h5 class="card-title" style="border-bottom: 1.5px solid; padding-bottom: 15px;">{{title}}</h5>
-          <p class="card-text">Charts and Graphs go here</p>
-          <button href="#" class="btn bg-dark edit-Btn">Edit</button>
-          <button href="#" class="btn bg-dark delete-Btn">Delete</button>
-        </div>
-      </div>
+{{#each this}}
+
+<div style="display: flex; justify-content: space-between">
+  <p class="card-text">{{title}} - {{entry.timestamp}}</p>
+    <div>
+      <button href="#" class="btn bg-dark edit-Btn">Edit</button>
+      <button href="#" class="btn bg-dark delete-Btn">Delete</button>
+    </div>
 </div>
-<script src="/js/script.js"></script>
+{{/each}}
+
+<script src="/js/habitEntriesByUser.js"></script>
