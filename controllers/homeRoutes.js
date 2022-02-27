@@ -71,7 +71,8 @@ router.get("/dietary", (req, res) => {
 });
 
 // PHYSICAL ROTUES START HERE
-router.get("/physical/running", async (req, res) => {
+// Running route all entries by user
+router.get("/physical/running", withAuth, async (req, res) => {
   try {
     const entryDataByUser = await Entry.findAll({
       include: [
@@ -91,23 +92,48 @@ router.get("/physical/running", async (req, res) => {
       title: "Running",
       categoryID: 1,
       habitID: 1,
+      logged_in: req.session.logged_in
     }
     );
-      
     // res.status(200).json(entries);
   } catch (err) {
     console.log(err)
     // res.status(500).json(err);
-    // res.redirect('login');
+    res.redirect('login');
   }
 });
-router.get("/physical/yoga", (req, res) => {
-  res.render("habitPage", {
-    title: "Yoga",
-    categoryID: 1,
-    habitID: 2,
-  });
+// Yoga route all entries by user
+router.get("/physical/yoga", async (req, res) => {
+  try {
+    const entryDataByUser = await Entry.findAll({
+      include: [
+        { model: User, attributes: ['id'] },
+        { model: Habit, attributes: ['habit_name']}
+      ],
+      where: {
+        user_id: req.session.user_id,
+        habit_id: 2
+      },
+    });
+  
+    const entries = entryDataByUser.map((entry) => entry.get({ plain: true }));
+
+    res.render("habitPage", {
+      entries,
+      title: "Yoga",
+      categoryID: 1,
+      habitID: 2,
+      logged_in: req.session.logged_in
+    }
+    );
+    // res.status(200).json(entries);
+  } catch (err) {
+    console.log(err)
+    // res.status(500).json(err);
+    res.redirect('login');
+  }
 });
+// Weightlifting route all entries by user
 router.get("/physical/weightLifting", (req, res) => {
   res.render("habitPage", {
     title: "Weight Lifting",
@@ -115,6 +141,7 @@ router.get("/physical/weightLifting", (req, res) => {
     habitID: 3,
   });
 });
+// Other physical route all entries by user
 router.get("/physical/other", (req, res) => {
   res.render("habitPage", {
     title: "Other",
@@ -124,6 +151,7 @@ router.get("/physical/other", (req, res) => {
 });
 
 // MENTAL ROUTES START HERE
+// Meditation route all entries by user
 router.get("/mental/meditation", (req, res) => {
   res.render("habitPage", {
     title: "Meditation",
@@ -131,6 +159,7 @@ router.get("/mental/meditation", (req, res) => {
     habitID: 5,
   });
 });
+// Journaling route all entries by user
 router.get("/mental/journaling", (req, res) => {
   res.render("habitPage", {
     title: "Journaling ",
@@ -138,6 +167,7 @@ router.get("/mental/journaling", (req, res) => {
     habitID: 6,
   });
 });
+// Rest route all entries by user
 router.get("/mental/rest", (req, res) => {
   res.render("habitPage", {
     title: "Rest ",
@@ -145,6 +175,7 @@ router.get("/mental/rest", (req, res) => {
     habitID: 7,
   });
 });
+// Other mental route all entries by user
 router.get("/mental/other", (req, res) => {
   res.render("habitPage", {
     title: "Other ",
@@ -154,6 +185,7 @@ router.get("/mental/other", (req, res) => {
 });
 
 // DIETARY ROUTES START HERE
+// Water route all entries by user
 router.get("/dietary/water", (req, res) => {
   res.render("habitPage", {
     title: "Water ",
@@ -161,6 +193,7 @@ router.get("/dietary/water", (req, res) => {
     habitID: 9,
   });
 });
+// Fruit & Veg route all entries by user
 router.get("/dietary/fruit&veggie", (req, res) => {
   res.render("habitPage", {
     title: "Fruit & Veggie ",
@@ -168,6 +201,7 @@ router.get("/dietary/fruit&veggie", (req, res) => {
     habitID: 10,
   });
 });
+// Protein route all entries by user
 router.get("/dietary/protiein", (req, res) => {
   res.render("habitPage", {
     title: "Protein ",
@@ -175,6 +209,7 @@ router.get("/dietary/protiein", (req, res) => {
     habitID: 11,
   });
 });
+// Other dietary route all entries by user
 router.get("/dietary/other", (req, res) => {
   res.render("habitPage", {
     title: "Other ",

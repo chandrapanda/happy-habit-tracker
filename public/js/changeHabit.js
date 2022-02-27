@@ -2,7 +2,7 @@
 // const habit_id = document.getElementById("habit_id").value;
 
 
-// document.getElementById("myBtn").addEventListener("click", displayDate);
+// document.getElementById("addBtn").addEventListener("click", displayDate);
 // const date = moment().format('YYYY MM DD, H:mm:ss');
 // console.log(date)
 // const backToDate = new Date (jsonDate);
@@ -13,9 +13,10 @@
 //   console.log(Date);
 // }
 
+// ADD AN ENTRY
 const addEntry = async function(event) {
   const habit_id = event.currentTarget.dataset.id
-  console.log(habit_id);
+  // console.log(habit_id);
 
   await fetch(`/api/entry`, {
       method: 'POST',
@@ -24,9 +25,32 @@ const addEntry = async function(event) {
         'Content-Type': 'application/json',
       },
     });
+  window.location.reload();
 }
 
   document
-  .querySelector('#myBtn')
+  .querySelector('#addBtn')
   .addEventListener('click', addEntry
+  );
+
+  // DELETE AN ENTRY
+  const deleteEntry = async function(event) {
+    if (event.target.matches('.delete-Btn')) {
+    
+    const habit_id = event.target.dataset.id
+    console.log(habit_id);
+
+    await fetch(`/api/entry/${habit_id}`, {
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
+    window.location.reload();
+  }
+}
+
+  document
+  .querySelector('.habit-container')
+  .addEventListener('click', deleteEntry
   );
