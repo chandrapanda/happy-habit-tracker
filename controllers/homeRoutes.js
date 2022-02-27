@@ -75,15 +75,12 @@ router.get("/physical/running", async (req, res) => {
   try {
     const entryDataByUser = await Entry.findAll({
       include: [
-        {
-          model: User,
-          attributes: ['id']
-        },
+        { model: User, attributes: ['id'] },
+        { model: Habit, attributes: ['habit_name']}
       ],
       where: {
-        user_id: 1,
-        // req.session.user_id,
-        habit_id: 3
+        user_id: req.session.user_id,
+        habit_id: 1
       },
     });
   

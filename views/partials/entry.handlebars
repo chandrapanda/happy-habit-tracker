@@ -1,12 +1,10 @@
-{{#each this}}
+{{#each entries as |entry|}}
 
 <div style="display: flex; justify-content: space-between">
-  <p class="card-text">{{title}} - {{entry.timestamp}}</p>
+  <p class="card-text">{{habit.habit_name}} - {{entry.timestamp}}</p>
     <div>
       <button href="#" class="btn bg-dark edit-Btn">Edit</button>
       <button href="#" class="btn bg-dark delete-Btn">Delete</button>
     </div>
 </div>
 {{/each}}
-
-<script src="/js/habitEntriesByUser.js"></script>
