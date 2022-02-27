@@ -51,21 +51,24 @@ router.get("/signup", (req, res) => {
 router.get("/physical", (req, res) => {
   res.render("physical", {
     title: "Physical",
-    categoryID: 1
+    categoryID: 1,
+    logged_in: req.session.logged_in
   });
 });
 
 router.get("/mental", (req, res) => {
   res.render("mental", {
     title: "Mental",
-    categoryID: 2
+    categoryID: 2,
+    logged_in: req.session.logged_in
   });
 });
 
 router.get("/dietary", (req, res) => {
   res.render("dietary", {
     title: "Dietary",
-    categoryID: 3
+    categoryID: 3,
+    logged_in: req.session.logged_in
   });
 });
 
@@ -142,7 +145,7 @@ router.get("/physical/weightLifting", withAuth, async (req, res) => {
       ],
       where: {
         user_id: req.session.user_id,
-        habit_id: 2
+        habit_id: 3
       },
     });
   
@@ -173,7 +176,7 @@ router.get("/physical/other", withAuth, async (req, res) => {
       ],
       where: {
         user_id: req.session.user_id,
-        habit_id: 2
+        habit_id: 4
       },
     });
   
@@ -205,7 +208,7 @@ router.get("/mental/meditation", withAuth, async (req, res) => {
       ],
       where: {
         user_id: req.session.user_id,
-        habit_id: 2
+        habit_id: 5
       },
     });
   
@@ -236,7 +239,7 @@ router.get("/mental/journaling", withAuth, async (req, res) => {
       ],
       where: {
         user_id: req.session.user_id,
-        habit_id: 2
+        habit_id: 6
       },
     });
   
@@ -267,7 +270,7 @@ router.get("/mental/rest", withAuth, async (req, res) => {
       ],
       where: {
         user_id: req.session.user_id,
-        habit_id: 2
+        habit_id: 7
       },
     });
   
@@ -298,7 +301,7 @@ router.get("/mental/other", withAuth, async (req, res) => {
       ],
       where: {
         user_id: req.session.user_id,
-        habit_id: 2
+        habit_id: 8
       },
     });
   
@@ -330,7 +333,7 @@ router.get("/dietary/water", withAuth, async (req, res) => {
       ],
       where: {
         user_id: req.session.user_id,
-        habit_id: 2
+        habit_id: 9
       },
     });
   
@@ -361,7 +364,7 @@ router.get("/dietary/fruit&veggie", withAuth, async (req, res) => {
       ],
       where: {
         user_id: req.session.user_id,
-        habit_id: 2
+        habit_id: 10
       },
     });
   
@@ -383,7 +386,7 @@ router.get("/dietary/fruit&veggie", withAuth, async (req, res) => {
   }
 });
 // Protein route all entries by user
-router.get("/dietary/protiein", withAuth, async (req, res) => {
+router.get("/dietary/protein", withAuth, async (req, res) => {
   try {
     const entryDataByUser = await Entry.findAll({
       include: [
@@ -392,7 +395,7 @@ router.get("/dietary/protiein", withAuth, async (req, res) => {
       ],
       where: {
         user_id: req.session.user_id,
-        habit_id: 2
+        habit_id: 11
       },
     });
   
@@ -423,7 +426,7 @@ router.get("/dietary/other", withAuth, async (req, res) => {
       ],
       where: {
         user_id: req.session.user_id,
-        habit_id: 2
+        habit_id: 12
       },
     });
   
