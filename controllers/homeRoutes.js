@@ -1,6 +1,5 @@
 const router = require("express").Router();
 const { Category, Entry, Habit, User } = require("../models");
-// const { User } = require("../models");
 const withAuth = require("../utils/auth");
 
 /*
