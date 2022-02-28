@@ -36,12 +36,7 @@ router.get("/dashboard/", async (req, res) => {
     });
   
     const entries = entryDataByUser.map((entry) => entry.get({ plain: true }));
-    // res.render('dashboard', {
-      //   // TODO: Which layout in handlebars is used to show the user all their entries???
-      //   layout: 'main', 
-      //   entries,
-      // });
-      
+    
     res.status(200).json(entryDataByUser);
   } catch (err) {
     res.status(500).json(err);
@@ -65,12 +60,7 @@ router.get("/tracking/:id", async (req, res) => {
       },
     });
   
-    const entries = entryDataByUser.map((entry) => entry.get({ plain: true }));
-    // res.render('habitPage', {
-      //   // TODO: Which layout in handlebars is used to show the user all their entries???
-      //   layout: 'main', 
-      //   entries,
-      // });
+    const entries = entryDataByUser.map((entry) => entry.get({ plain: true })); 
       
     res.status(200).json(entryDataByUser);
   } catch (err) {
