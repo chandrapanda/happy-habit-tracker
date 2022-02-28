@@ -1,5 +1,4 @@
 {{! Header Starts Here }}
-
 <div class="entryContainer" style="display: flex; flex-direction: column; align-items: center; text-align: center;">
   <div class="card" style="width: 40rem; margin: 3rem;">
     <div class="card-body" >
@@ -8,9 +7,10 @@
 
       {{!-- Habit Entry as partial --}}
       <section class="habit-container">
-        <div>
-          <p>CHART JS WILL GO HERE</p>
-        </div>
+    
+<div class="container">
+  <canvas id="myChart"></canvas>
+</div>          
           {{> entry}}
       </section>  
 
@@ -30,3 +30,4 @@
 
 
 <script src="/js/changeHabit.js"></script>
+<script src="/js/chart.js"></script>
