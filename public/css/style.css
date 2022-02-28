@@ -19,6 +19,10 @@ body {
 
 .card-title {
   font-size: 28px;
+  border-bottom: 1px black dashed;
+  padding-bottom: 1rem;
+  padding-left: 5rem;
+  padding-right: 5rem;
 }
 
 .card-text {
@@ -83,7 +87,17 @@ body {
 
 .jumbotron {
   margin-bottom: 1rem;
+  border-bottom: black 1px dashed;
+}
+#entryTitle {
   margin-left: 6rem;
   margin-right: 6rem;
-  border-bottom: black 2px dashed;
 }
+
+#homeBtn {
+  height: 3.5rem;
+  width: 12rem;
+  line-height: 1;
+  background-color: grey;
+}
+
