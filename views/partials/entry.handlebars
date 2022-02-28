@@ -3,8 +3,8 @@
 <div style="display: flex; justify-content: space-between">
   <p class="card-text">{{habit.habit_name}} - {{entry.timestamp}}</p>
     <div>
-      <button href="#" class="btn bg-dark edit-Btn">Edit</button>
-      <button href="#" class="btn bg-dark delete-Btn" data-id="{{entry.id}}">Delete</button>
+      <button href="#" class="btn bg-dark edit-Btn" id="editBtn">Edit</button>
+      <button href="#" class="btn bg-danger delete-Btn" id="deleteBtn" data-id="{{entry.id}}">Delete</button>
     </div>
 </div>
 
