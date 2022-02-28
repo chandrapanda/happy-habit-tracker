@@ -1,5 +1,4 @@
-// 'use strict'
-// Global variables
+// Global variables for date and time
 const today = new Date();
 const day = `${today.getDate()}`.padStart(2, 0);
 const month = `${today.getMonth() + 1}`.padStart(2, 0);

@@ -1,11 +1,9 @@
 // ENTRY ROUTES
 
 const router = require("express").Router();
-const { redirect } = require("express/lib/response");
 const { Entry, Habit, User } = require("../../models");
 
 // The `/api/entry` endpoint
-
 router.get("/admin-get-all", async (req, res) => {
   //Find all entries
   try {
@@ -20,32 +18,24 @@ router.get("/admin-get-all", async (req, res) => {
   }
 });
 
-// View all entries by one user
+// View all entries by one user on user Dashboard
 router.get("/dashboard/", async (req, res) => {
   try {
     const entryDataByUser = await Entry.findAll({
       include: [
         {
           model: User,
-          attributes: ['id']
+          attributes: ["id"],
         },
       ],
       where: {
         user_id: req.session.user_id,
       },
     });
-  
-    const entries = entryDataByUser.map((entry) => entry.get({ plain: true }));
-    // res.render('dashboard', {
-      //   // TODO: Which layout in handlebars is used to show the user all their entries???
-      //   layout: 'main', 
-      //   entries,
-      // });
-      
+
     res.status(200).json(entryDataByUser);
   } catch (err) {
     res.status(500).json(err);
-    // res.redirect('login');
   }
 });
 
@@ -56,29 +46,20 @@ router.get("/tracking/:id", async (req, res) => {
       include: [
         {
           model: User,
-          attributes: ['id']
+          attributes: ["id"],
         },
       ],
       where: {
         user_id: req.session.user_id,
-        habit_id: req.params.id
+        habit_id: req.params.id,
       },
     });
-  
-    const entries = entryDataByUser.map((entry) => entry.get({ plain: true }));
-    // res.render('habitPage', {
-      //   // TODO: Which layout in handlebars is used to show the user all their entries???
-      //   layout: 'main', 
-      //   entries,
-      // });
-      
+
     res.status(200).json(entryDataByUser);
   } catch (err) {
     res.status(500).json(err);
-    // res.redirect('login');
   }
 });
-
 
 //Get one entry
 router.get("/:id", async (req, res) => {
@@ -100,12 +81,15 @@ router.get("/:id", async (req, res) => {
 
 //Create a new entry
 router.post("/", async (req, res) => {
-  console.log('POST route to add entry running!')
+  console.log("POST route to add entry running!");
   try {
-    const newEntry = await Entry.create({
-      ...req.body, 
-      user_id: req.session.user_id}, 
-      {returning: true});
+    const newEntry = await Entry.create(
+      {
+        ...req.body,
+        user_id: req.session.user_id,
+      },
+      { returning: true }
+    );
     res.status(200).json(newEntry);
   } catch (err) {
     console.log(err);
@@ -113,7 +97,7 @@ router.post("/", async (req, res) => {
   }
 });
 
-//Update entry by its `id` value
+// Update entry by its `id` value
 router.put("/:id", async (req, res) => {
   try {
     const updatedEntry = await Entry.update(req.body, {
@@ -130,8 +114,8 @@ router.put("/:id", async (req, res) => {
   }
 });
 
+// Delete an entry by its `id` value
 router.delete("/:id", async (req, res) => {
-  // delete an entry by its `id` value
   try {
     const entryData = await Entry.destroy({
       where: { id: req.params.id },
