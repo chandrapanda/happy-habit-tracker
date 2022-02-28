@@ -49,7 +49,7 @@ router.get("/dashboard/", async (req, res) => {
   }
 });
 
-// TODO: View all entries by one user for one habit
+//  View all entries by one user for one habit
 router.get("/tracking/:id", async (req, res) => {
   try {
     const entryDataByUser = await Entry.findAll({
