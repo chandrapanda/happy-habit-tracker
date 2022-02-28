@@ -447,5 +447,33 @@ router.get("/dietary/other", withAuth, async (req, res) => {
     res.redirect('login');
   }
 });
+// MY HABIT DASHBOARD
+router.get("/dashboard", withAuth, async (req, res) => {
+  try {
+    const entryDataByUser = await Entry.findAll({
+      include: [
+        { model: User, attributes: ['id'] },
+        { model: Habit, attributes: ['habit_name']}
+      ],
+      where: {
+        user_id: req.session.user_id,
+      },
+    });
+  
+    const entries = entryDataByUser.map((entry) => entry.get({ plain: true }));
+
+    res.render("dashboard", {
+      entries,
+      title: "My Habit Dashboard",
+      logged_in: req.session.logged_in
+    }
+    );
+    // res.status(200).json(entries);
+  } catch (err) {
+    console.log(err)
+    // res.status(500).json(err);
+    res.redirect('login');
+  }
+});
 
 module.exports = router;
