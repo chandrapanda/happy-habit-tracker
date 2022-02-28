@@ -1,0 +1,32 @@
+{{! Header Starts Here }}
+
+<div class="entryContainer" style="display: flex; flex-direction: column; align-items: center; text-align: center;">
+  <div class="card" style="width: 40rem; margin: 3rem;">
+    <div class="card-body" >
+      <h5 class="card-title" id="entryTitle" style="border-bottom: 1px dashed; padding-bottom: 15px;">{{title}}</h5>
+      {{!-- <button id="addBtn" class="btn btn-outline-success my-2 my-sm-0" data-id="{{habitID}}">Add {{title}} Entry!</button>         --}}
+
+      {{!-- Habit Entry as partial --}}
+      <section class="habit-container">
+        <div>
+          <p>CHART JS WILL GO HERE</p>
+        </div>
+          {{> entry}}
+      </section>  
+
+    </div>
+  </div>
+</div>
+
+<div
+  class="back-button"
+  style="display: flex; justify-content: center; margin: 1rem;">
+
+  <a href="/"><button type="button" id="homeBtn" class="btn btn-dark btn-lg">Go Back Home</button></a>
+
+</div>
+
+
+
+
+<script src="/js/changeHabit.js"></script>

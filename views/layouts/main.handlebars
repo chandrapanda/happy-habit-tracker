@@ -22,12 +22,17 @@
   </head>
   <body>
 <nav class="navbar navbar-light bg-light">
+  <div style="display: flex; flex-direction: row; align-items: center;">
   <a href="/">
     <span class="navbar-brand" style="display: flex; align-items: center;">
     {{!-- <img class="d-inline-block align-top" alt="logo" height="50" width="50" src="/images/logo.jpg" style="display: none;"> --}}
     Happy Habit Tracker
     </span>
   </a>
+  {{#if logged_in}}
+  <a id="dashboard" href="/dashboard" style="text-align: left;">My Dashboard</a>
+  {{/if}}
+  </div>
       {{#if logged_in}}
         <a id="logout" href="/">Logout</a>
       {{else}}
