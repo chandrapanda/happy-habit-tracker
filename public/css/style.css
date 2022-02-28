@@ -1,5 +1,11 @@
+body {
+  background: #ecf0f3;
+}
+
 .card {
   margin: 3rem;
+  border-radius: 15px;
+  box-shadow: 13px 13px 20px #cbced1, -13px -13px 20px #fff;
 }
 .card-container {
   display: flex;
@@ -9,6 +15,14 @@
 .title-container {
   display: flex;
   
+}
+
+.card-title {
+  font-size: 28px;
+}
+
+.card-text {
+  font-size: 18px;
 }
 
 .card-margin {
@@ -47,10 +61,29 @@
   border-radius: 25px;
 } 
 
-.edit-Btn {
+#editBtn {
   color: white;
+  width: 7rem;
 }
 
-.delete-Btn {
+#deleteBtn {
   color: white;
+  margin: 1rem;
+  width: 7rem;
+}
+
+.btn {
+  color: whitesmoke;
+  background-color: #03a9f4;
+  border-radius: 25px;
+  box-shadow: 3px 3px 3px #b1b1b1, -3px -3px 3px #fff;
+  letter-spacing: 1.3px;
+  width: 10rem;
+}
+
+.jumbotron {
+  margin-bottom: 1rem;
+  margin-left: 6rem;
+  margin-right: 6rem;
+  border-bottom: black 2px dashed;
 }
