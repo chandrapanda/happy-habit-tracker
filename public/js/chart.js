@@ -25,9 +25,4 @@ async function countEntries() {
   });
   return massPopChart;
 }
-
-// const displayHabitData = function (label, data) {
-// };
-
-// displayHabitData("test", [1, 2, 3, 4]);
 countEntries();

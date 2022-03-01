@@ -41,7 +41,7 @@ This project was created by: As a busy person with ambition, I want a way to tra
 
 [Heroku](https://happy-habit-tracker-app.herokuapp.com)
 
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://happy-habit-tracker.herokuapp.com/)
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://happy-habit-tracker-app.herokuapp.com/)
 
 ### GitHub
 
