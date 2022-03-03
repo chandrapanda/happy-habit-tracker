@@ -2,7 +2,7 @@
 
 ## Description
 
-Track your dietary, physical, and mental health by utilizing this habit application! Users can select from a variety of habits and check out their habit history on an intuitive, dynamic chart.
+Track your dietary, physical, and mental health by utilizing this habit application! Users can select from a variety of habits and check out their habit history on an intuitive, dynamic chart. This application is deployed to Heroku. To see the application, scroll to "LINKS" and click the Heroku button!
 
 ## Table of Contents
 
